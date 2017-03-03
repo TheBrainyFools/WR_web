@@ -1,10 +1,22 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+var $ = require("jquery");
+var GridItem = require('./GridItem');
+var SliderItem = require('./SliderItem');
 
 var Slider = React.createClass({
 
-  render: function() {
+  componentDidMount: function() {
+    $('.slider').slick({
+      dots: false,
+      infinite: true,
+      centerMode: true,
+      slidesToShow: 2,
+      slidesToScroll: 1
+         });
+  },
 
+  render: function() {
     var style = {
        width: "100%",
        height: "300px",
@@ -12,13 +24,14 @@ var Slider = React.createClass({
     };
 
     return (
-      <div style={style}>
-
+      <div className="slider" style={style}>
+        <SliderItem/>
+        <SliderItem/>
+        <SliderItem/>
+        <SliderItem/>
       </div>
     );
   }
-
-
 
 });
 

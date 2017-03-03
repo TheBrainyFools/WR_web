@@ -20,7 +20,7 @@ const GridItem = (props) => {
        <GridItemImg/>
       <div className="mdl-cell mdl-cell--7-col">
         <GridItemMenu/>
-        <h6> Logan (2015) </h6>
+        <h6> Logan (2017) </h6>
         <Star/><Star/><Star/><Star/><Star color="#ccc"/>
         <p style={fontStyles}> In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's... </p>
      </div>
