@@ -21,3 +21,9 @@ body{
 .mdl-tabs__tab-bar{
   justify-content: flex-end;
 }
+.mdl-card{
+  overflow: visible;
+}
+.shadow1{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.23);
+}
