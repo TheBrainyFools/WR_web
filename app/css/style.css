@@ -1,0 +1,23 @@
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+
+body{
+  background-color: #f5f4f7;
+}
+.whiteBg{
+  background-color: white;
+}
+.whiteBg a{
+  color:#333!important;
+}
+.text-center{
+  text-align: center;
+}
+.mdl-tabs__tab-bar{
+  justify-content: flex-end;
+}
