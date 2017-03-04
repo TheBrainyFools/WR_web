@@ -1,6 +1,5 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
-require("../css/style.css");
 require("../js/material.min.js");
 require("jquery");
 require("../js/slick.js");

@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
+
 function Menu (){
   return(
     <div>

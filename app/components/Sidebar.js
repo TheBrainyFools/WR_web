@@ -1,6 +1,8 @@
 var React = require('react');
 var ListAvatars = require('./ListAvatars');
 var ListItem = require('./ListItem');
+var TopViewed = require('./TopViewed');
+var TopViewedItem = require('./TopViewedItem');
 
  function Sidebar() {
     return (
@@ -11,6 +13,13 @@ var ListItem = require('./ListItem');
           <ListItem name="Rayen Hostling"/>
           <ListItem name="Tina Kandelaki"/>
         </ListAvatars>
+        <TopViewed>
+          <TopViewedItem name="Logan"/>
+          <TopViewedItem name="Lucy"/>
+          <TopViewedItem name="Assasins Creed"/>
+          <TopViewedItem name="Teen Turtles 2"/>
+          <TopViewedItem name="My name is Jef"/>
+        </TopViewed>
         </div>
 
     );

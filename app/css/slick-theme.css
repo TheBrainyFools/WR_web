@@ -29,19 +29,19 @@
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
-    color: #333;
+    color: transparent;
     border: none;
     outline: none;
     background: #fff;
+    z-index: 99;
 }
 .slick-prev:hover,
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus
 {
-    color: transparent;
-    outline: none;
-    background: transparent;
+    box-shadow: none;
+    background: #fff
 }
 .slick-prev:hover:before,
 .slick-prev:focus:before,

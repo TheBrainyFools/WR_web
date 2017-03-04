@@ -4,7 +4,7 @@ var PropTypes = React.PropTypes;
 function Star(props) {
   var starStyles = {
     fontSize: '18px',
-    color: '{props.color}'
+    color: '#FFD700'
   };
     return (
       <a href="#"><i style={starStyles} className="material-icons">star</i></a>

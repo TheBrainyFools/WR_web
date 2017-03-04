@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+require("../js/material.min.js");
 
 const GridItemMenu = (props) => {
 
