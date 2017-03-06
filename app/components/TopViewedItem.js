@@ -11,7 +11,10 @@ function TopViewedItem(props) {
       <div className="mdl-list__item" >
         <span className="mdl-list__item-primary-content">
           <img src="http://spidermedia.ru/assets/images/movies/marvel/wolverine-3/cuaiczwueaaid_w-jpg-large.jpg" style={imgStyles}/>
+          <div>
           <span>{props.name}</span>
+          <p style={{fontWeight:"300"}}> by {props.author}</p>
+          </div>
       </span>
       </div>
     );
