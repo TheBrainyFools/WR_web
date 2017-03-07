@@ -4,9 +4,12 @@ var ListItem = require('./ListItem');
 var TopViewed = require('./TopViewed');
 var TopViewedItem = require('./TopViewedItem');
 
- function Sidebar() {
+ function SidebarHomePage(props) {
+   var SidebarHomePageStyles ={
+     padding:"5px"
+   }
     return (
-      <div className="mdl-cell--3-col mdl-cell--12-col-phone">
+      <div className="mdl-cell--3-col mdl-cell--12-col-phone" style={SidebarHomePageStyles}>
         <ListAvatars>
           <ListItem name="Luke Bessone"/>
           <ListItem name="Gun Gustin"/>
@@ -20,9 +23,9 @@ var TopViewedItem = require('./TopViewedItem');
           <TopViewedItem name="Teen Turtles 2" author="Tina Kandelaki"/>
           <TopViewedItem name="My name is Jef" author="Tim Burton"/>
         </TopViewed>
-        </div>
+      </div>
 
     );
   }
 
-module.exports = Sidebar;
+module.exports = SidebarHomePage;

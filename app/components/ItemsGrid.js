@@ -4,7 +4,7 @@ var GridItem = require('./GridItem');
 const ItemsGrid= (props) => {
   return (
     <div>
-       <GridItem/>
+       <GridItem styling="gridItemStyle"/>
        <GridItem />
        <GridItem />
        <GridItem />

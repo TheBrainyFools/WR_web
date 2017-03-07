@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var FilmButtons = require('./FilmButtons');
+var Star = require('./Star');
 
 var FilmPageDescription = React.createClass({
 
@@ -9,17 +10,18 @@ var FilmPageDescription = React.createClass({
       <div className="description mdl-cell--6-col">
         <div className="mdl-grid">
         <div className="mdl-cell--6-col">
-        <h2>Logan</h2>
-        <p><b>Genre</b>: Action</p>
-        <p><b>Release Date</b>:02.03.17 </p>
-        <p><b>Duration</b>: 2:20 </p>
-        <p><b>Director</b>: James Mangold </p>
-        <p><b>Producer</b>:James Mangold</p>
-        <p><b>Cast</b>:  Hugh Jackman, Patrick Stewart, Dafne Keen</p>
+          <h2>Logan</h2>
+          <Star/><Star/><Star/><Star/><Star/>
+          <p><b>Genre</b>: Action</p>
+          <p><b>Release Date</b>:02.03.17 </p>
+          <p><b>Duration</b>: 2:20 </p>
         </div>
-        <div className="mdl-cell--6-col">
+        <div className="mdl-cell--6-col" style={{marginTop:"30%"}}>
+          <p><b>Director</b>: James Mangold </p>
+          <p><b>Producer</b>:James Mangold</p>
+          <p><b>Cast</b>:  Hugh Jackman, Patrick Stewart, Dafne Keen</p>
+        </div>
           <FilmButtons/>
-        </div>
       </div>
       </div>
     );
