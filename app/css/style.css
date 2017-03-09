@@ -33,6 +33,9 @@ h5, h6{
 p{
     margin:1em 0;
 }
+a{
+  text-decoration: none;
+}
 
 /* nav*/
 a.mdl-navigation__link{

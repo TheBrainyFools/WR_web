@@ -7,12 +7,14 @@ var IndexRoute = ReactRouter.IndexRoute;
 var Main = require('../components/Main');
 var Home = require('../components/Home');
 var FilmPage = require('../components/FilmPage');
+var SearchResults = require('../components/SearchResults');
 
 var routes = (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={Home}/>
       <Route path="/filmPage" component={FilmPage}/>
+      <Route path="/searchResult" component={SearchResults}/>
     </Route>
   </Router>
 )

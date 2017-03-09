@@ -6,7 +6,7 @@ var ItemsGrid = require('./ItemsGrid');
 var ContentGrid = React.createClass({
   render: function() {
     return (
-      <div className="mdl-grid" style={{marginTop:100+'px'}}>
+      <div className="mdl-grid">
         <SidebarHomePage/>
         <div className="mdl-cell--9-col mdl-cell--12-col-phone">
         <Tabs/>
