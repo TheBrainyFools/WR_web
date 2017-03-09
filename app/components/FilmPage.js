@@ -18,7 +18,6 @@ var FilmPage = React.createClass({
     };
     return (
       <div>
-        <Menu/>
         <div className="mdl-grid">
         <SidebarSingle/>
         <div className="mdl-cell--8-col" style={filmPageStyle}>

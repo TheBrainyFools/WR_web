@@ -1,15 +1,19 @@
 var React = require('react');
-var PropTypes = React.PropTypes;
+var Menu = require('./Menu');
+var Footer = require('./Footer');
 require("../js/material.min.js");
 require("jquery");
 require("../js/slick.js");
 
- function Main (props) {
+var Main = React.createClass({
+  render: function(props) {
     return (
       <div className="main-container">
-        {props.children}
+        <Menu/>
+        {this.props.children}
+        <Footer/>
       </div>
     );
   }
-
+});
 module.exports = Main;

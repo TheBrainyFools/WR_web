@@ -1,5 +1,6 @@
 var React = require('react');
 var Star = require('./Star');
+var LearnMoreButton = require('./LearnMoreButton');
 
 function SliderItem() {
   var sliderImgStyles = {
@@ -24,9 +25,7 @@ function SliderItem() {
           <h5> La La Land (2017) </h5>
           <Star/><Star/><Star/><Star/><Star/>
           <p> In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's... </p>
-          <button className="mdl-button mdl-js-button mdl-button--raised" style={{backgroundColor:'#fff', borderRadius:'50px', padding:"0px 20px"}}>
-            Learn more
-          </button>
+          <LearnMoreButton/>
         </div>
       </div>
       </div>
