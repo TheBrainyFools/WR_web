@@ -2,7 +2,7 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var Link = require('react-router').Link;
 var PropTypes = React.PropTypes;
-var Search = require('./Search');
+var SearchHandler = require('./SearchHandler');
 
 function Menu (){
   return(
@@ -10,7 +10,7 @@ function Menu (){
   <header className="mdl-header whiteBg">
     <div className="mdl-layout__header-row">
       <div className='mdl-cell mdl-cell--4-col'>
-        <Search/>
+        <SearchHandler/>
       </div>
       <div className=" text-center mdl-cell mdl-cell--4-col">
         <Link to="/">

@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactRouter = require('react-router');
 var PropTypes = React.PropTypes;
 var FilmButtons = require('./FilmButtons');
 var Star = require('./Star');
@@ -10,7 +11,7 @@ var FilmPageDescription = React.createClass({
       <div className="description mdl-cell--6-col">
         <div className="mdl-grid">
         <div className="mdl-cell--6-col">
-          <h2>Logan</h2>
+          <h2>{this.props.name}</h2>
           <Star/><Star/><Star/><Star/><Star/>
           <p><b>Genre</b>: Action</p>
           <p><b>Release Date</b>:02.03.17 </p>

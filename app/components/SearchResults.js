@@ -5,12 +5,12 @@ var SidebarHomePage = require('./SidebarHomePage');
 
 var SearchResults = React.createClass({
 
-  render: function() {
+  render: function(props) {
     return (
         <div className="mdl-grid">
           <SidebarHomePage/>
           <div className="mdl-cell--9-col">
-            <h4>Search results by: search word</h4>
+            {this.props.children}
             <ItemsGrid />
           </div>
         </div>

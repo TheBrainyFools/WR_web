@@ -7,6 +7,7 @@ var FilmPlot = require('./FilmPlot');
 var SidebarSingle = require('./SidebarSingle');
 
 var FilmPage = React.createClass({
+
   render: function() {
     var filmPageStyle = {
       boxShadow:"0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12)",
@@ -16,6 +17,7 @@ var FilmPage = React.createClass({
       marginRight:"auto",
       marginLeft:"auto"
     };
+    var name = this.props.params.name;
     return (
       <div>
         <div className="mdl-grid">
@@ -23,7 +25,7 @@ var FilmPage = React.createClass({
         <div className="mdl-cell--8-col" style={filmPageStyle}>
           <div className="mdl-grid">
           <FilmPageImg/>
-          <FilmPageDescription/>
+          <FilmPageDescription name={name}/>
           <FilmPlot/>
           </div>
         </div>

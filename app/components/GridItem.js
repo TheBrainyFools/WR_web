@@ -2,6 +2,7 @@ var React = require('react');
 var Star = require('./Star');
 var GridItemMenu = require('./GridItemMenu');
 var GridItemImg = require('./GridItemImg');
+var Link = require('react-router').Link;
 
 function GridItem(props){
   var fontStyles = {
@@ -20,7 +21,7 @@ function GridItem(props){
        <GridItemImg/>
       <div className="mdl-cell mdl-cell--7-col">
         <GridItemMenu/>
-        <h6> Logan (2017) </h6>
+        <Link to={"/films/"+props.name}><h6> {props.name} </h6></Link>
         <Star/><Star/><Star/><Star/><Star color="#ccc"/>
         <p style={fontStyles}> In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's... </p>
      </div>

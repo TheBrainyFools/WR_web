@@ -7,15 +7,19 @@ var IndexRoute = ReactRouter.IndexRoute;
 var Main = require('../components/Main');
 var Home = require('../components/Home');
 var FilmPage = require('../components/FilmPage');
-var SearchResults = require('../components/SearchResults');
+var SearchResultsByWord = require('../components/SearchResultsByWord');
+var SearchResultsByAuthor = require('../components/SearchResultsByAuthor');
+var SearchHandler = require('../components/SearchHandler');
+
 
 var routes = (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={Home}/>
-      <Route path="/filmPage" component={FilmPage}/>
-      <Route path="/searchResult" component={SearchResults}/>
-    </Route>
+      <Route path="/films/:name" component={FilmPage}/>
+      <Route path="/search/:searchWord" component={SearchResultsByWord}/>
+      <Route path="/searchResultsByAuthor" component={SearchResultsByAuthor}/>
+   </Route>
   </Router>
 )
 
