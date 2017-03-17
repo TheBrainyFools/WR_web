@@ -24,6 +24,15 @@ body{
 .mdl-card{
   overflow: visible;
 }
+.mdl-card #overview{
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 65px;      /* fallback */
+   -webkit-line-clamp: 4; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
 .shadow1{
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.23);
 }

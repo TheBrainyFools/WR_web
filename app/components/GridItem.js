@@ -18,12 +18,12 @@ function GridItem(props){
   return (
     <div className="mdl-card mdl-shadow--2dp" style={gridItemStyle}>
       <div className="mdl-grid">
-       <GridItemImg/>
+       <GridItemImg src={props.imgSrc}/>
       <div className="mdl-cell mdl-cell--7-col">
         <GridItemMenu/>
         <Link to={"/films/"+props.name}><h6> {props.name} </h6></Link>
         <Star/><Star/><Star/><Star/><Star color="#ccc"/>
-        <p style={fontStyles}> In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's... </p>
+        <p id="overview" style={fontStyles}> {props.overview}</p>
      </div>
     </div>
   </div>

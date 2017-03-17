@@ -12,10 +12,14 @@ var FilmButtons = React.createClass({
         <button style={{marginLeft:"20px", display:"inline-block"}} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
           <i className="material-icons">local_offer</i> Buy ticket
         </button>
+        <button style={{marginLeft:"20px", display:"inline-block"}} className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent">
+          <i id="notificationButton" className="material-icons">notifications</i>
+        </button>
       </div>
     );
   }
 
 });
+
 
 module.exports = FilmButtons;

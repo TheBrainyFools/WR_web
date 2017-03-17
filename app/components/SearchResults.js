@@ -3,6 +3,8 @@ var PropTypes = React.PropTypes;
 var ItemsGrid = require('./ItemsGrid');
 var SidebarHomePage = require('./SidebarHomePage');
 
+var axios = require('axios');
+
 var SearchResults = React.createClass({
 
   render: function(props) {
@@ -11,7 +13,6 @@ var SearchResults = React.createClass({
           <SidebarHomePage/>
           <div className="mdl-cell--9-col">
             {this.props.children}
-            <ItemsGrid />
           </div>
         </div>
     );
