@@ -16,7 +16,7 @@ var routes = (
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
       <IndexRoute component={Home}/>
-      <Route path="/films/:name" component={FilmPage}/>
+      <Route path="/films/:id" component={FilmPage}/>
       <Route path="/search/:searchWord" component={SearchResultsByWord}/>
       <Route path="/searchResultsByAuthor" component={SearchResultsByAuthor}/>
    </Route>

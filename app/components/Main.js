@@ -4,13 +4,16 @@ var Footer = require('./Footer');
 require("../js/material.min.js");
 require("jquery");
 require("../js/slick.js");
+var Films = require('./Films');
 
 var Main = React.createClass({
   render: function(props) {
     return (
       <div className="main-container">
         <Menu/>
-        {this.props.children}
+          <Films>
+            {this.props.children}
+          </Films>
         <Footer/>
       </div>
     );

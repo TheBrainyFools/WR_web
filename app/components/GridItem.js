@@ -14,14 +14,14 @@ function GridItem(props){
      height: "220px",
      marginTop: "60px",
      marginRight: "2em"
-  };
+  }
   return (
     <div className="mdl-card mdl-shadow--2dp" style={gridItemStyle}>
       <div className="mdl-grid">
        <GridItemImg src={props.imgSrc}/>
       <div className="mdl-cell mdl-cell--7-col">
         <GridItemMenu/>
-        <Link to={"/films/"+props.name}><h6> {props.name} </h6></Link>
+        <Link to={"/films/"+props.filmId}><h6> {props.name} </h6></Link>
         <Star/><Star/><Star/><Star/><Star color="#ccc"/>
         <p id="overview" style={fontStyles}> {props.overview}</p>
      </div>
