@@ -12,7 +12,7 @@ const GridItemMenu = (props) => {
 
     return (
       <div style={GridItemMenuStyles}>
-        <button className="mdl-button mdl-js-button mdl-button--icon" data-mdl-for="demo-menu-top-right">
+        <button className="mdl-button mdl-js-button mdl-button--icon">
           <i className="material-icons">more_vert</i>
         </button>
 

@@ -1,14 +1,15 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+require("../js/material.min.js");
+var Link = require('react-router').Link;
 
-function Tabs (){
+function Tabs (props){
     return (
     <div className="mdl-tabs mdl-js-tabs">
       <div className="mdl-tabs__tab-bar">
-        <h4 style={{float:"left", marginRight:"50%", lineHeight:"24px"}}> Search by Genre </h4>
-        <a href="#starks-panel" className="mdl-tabs__tab is-active">Filter1</a>
-        <a href="#lannisters-panel" className="mdl-tabs__tab">Filter2</a>
-        <a href="#targaryens-panel" className="mdl-tabs__tab">Filter3</a>
+        <h4 style={{float:"left", marginRight:"50%", lineHeight:"24px"}}> Find </h4>
+        <a onClick={props.handleClick} href="#mostPopular" className="mdl-tabs__tab is-active">Most popular</a>
+        <a onClick={props.handleClick} href="#latest" className="mdl-tabs__tab">Latest</a>
       </div>
     </div>
     );

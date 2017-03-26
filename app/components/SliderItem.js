@@ -1,8 +1,26 @@
 var React = require('react');
 var Star = require('./Star');
 var LearnMoreButton = require('./LearnMoreButton');
+require("../js/slick.js");
+var $ = require("jquery");
 
-function SliderItem() {
+
+  var SliderItem = React.createClass({
+    componentDidMount: function() {
+      $('.slider').slick({
+        dots: false,
+        infinite: true,
+        centerMode: false,
+        slidesToShow: 2,
+        slidesToScroll: 1
+           });
+    },
+    contextTypes: {
+      LatestPosts: React.PropTypes.array,
+      imgPath: React.PropTypes.string
+    },
+  render: function(props) {
+
   var sliderImgStyles = {
       maxHeight: '320px',
       width: 'auto',
@@ -16,20 +34,19 @@ function SliderItem() {
     color: '#fff'
   }
     return (
-      <div>
-        <div className="mdl-grid">
+        <div className="mdl-grid sliderItem">
         <div className="mdl-cell mdl-cell--6-col">
-          <img src="https://d35fkdjhhgt99.cloudfront.net/static/use-media-items/48/47382/upto-700xauto/587a5198/1.jpeg?resolution=0" style={sliderImgStyles}/>
+          <img src={this.context.imgPath+this.props.imgSrc} style={sliderImgStyles}/>
         </div>
         <div style={{sliderTextStyles, borderRight:'solid 1px #fff'}} className="mdl-cell mdl-cell--6-col">
-          <h5> La La Land (2017) </h5>
+          <h5>{this.props.name} </h5>
           <Star/><Star/><Star/><Star/><Star/>
-          <p> In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's... </p>
-          <LearnMoreButton/>
+          <p id="overview"> {this.props.overview}</p>
+          <LearnMoreButton linkTo={this.props.filmId}/>
         </div>
       </div>
-      </div>
     );
-  }
+}
 
+});
 module.exports = SliderItem ;

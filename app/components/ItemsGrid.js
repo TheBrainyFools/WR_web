@@ -3,17 +3,12 @@ var GridItem = require('./GridItem');
 var axios = require('axios');
 
 var ItemsGrid = React.createClass({
-  img :{
-   "base_url": "https://image.tmdb.org/t/p/",
-   "size": "original",
-   "path":"post.poster_path"
- },
  contextTypes: {
    PopularPosts: React.PropTypes.array
  },
   render: function(props) {
   return (
-    <div>
+    <div id='mostPopular'>
       {this.context.PopularPosts.map(function(post) {
           return (
        <GridItem

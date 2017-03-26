@@ -12,10 +12,16 @@ var SidebarCard = require('./SidebarCard');
    };
     return (
       <div className="mdl-cell--3-col mdl-cell--12-col-phone" style={whiteSidebar}>
-        <SidebarCard/>
-        <SidebarCard/>
-        <SidebarCard/>
-        <SidebarCard/>
+      {this.context.LatestPosts.map(function(post) {
+        return (
+        <SidebarCard
+          key={post.id}
+          name={post.title}
+          imgSrc={post.poster_path}
+          overview={post.overview}
+          filmId = {post.id}/>
+        )
+      })}
       </div>
 
     );
