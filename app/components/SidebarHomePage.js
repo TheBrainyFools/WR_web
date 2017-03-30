@@ -17,11 +17,7 @@ var TopViewedItem = require('./TopViewedItem');
           <ListItem name="Tina Kandelaki"/>
         </ListAvatars>
         <TopViewed>
-          <TopViewedItem name="Logan" author="Luke Bessone"/>
-          <TopViewedItem name="Lucy" author="Gun Gustin"/>
-          <TopViewedItem name="Assasins Creed" author="Rayen Hostling"/>
-          <TopViewedItem name="Teen Turtles 2" author="Tina Kandelaki"/>
-          <TopViewedItem name="My name is Jef" author="Tim Burton"/>
+          <TopViewedItem name="name" author="author"/>
         </TopViewed>
       </div>
 
