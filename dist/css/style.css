@@ -1,0 +1,77 @@
+
+/*General setting*/
+body{
+  background-color: #f5f4f7;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+.whiteBg{
+  background-color: white;
+}
+.whiteBg a{
+  color:#333!important;
+}
+.text-center{
+  text-align: center;
+}
+.mdl-tabs__tab-bar{
+  justify-content: flex-end;
+}
+.mdl-card{
+  overflow: visible;
+}
+.mdl-card #overview{
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 65px;      /* fallback */
+   -webkit-line-clamp: 4; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+.shadow1{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.23);
+}
+h5, h6{
+  margin: 5px 0 16px;
+}
+p{
+    margin:1em 0;
+}
+a{
+  text-decoration: none;
+}
+
+/* nav*/
+a.mdl-navigation__link{
+  position:relative
+}
+a.mdl-navigation__link:after{
+  bottom:0;
+  content:"";
+  display:block;
+  height:2px;
+  left:50%;
+  position:absolute;
+  background:rgb(63,81,181);
+  transition:width .3s ease 0s,left .3s ease 0s;
+  width:0
+}
+a:hover:after{
+  width:100%;left:0
+}
+
+/*Slider*/
+.sliderItem #overview{
+  overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+line-height: 16px;
+max-height: 85px;
+-webkit-line-clamp: 5;
+-webkit-box-orient: vertical
+}

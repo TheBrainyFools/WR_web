@@ -6,7 +6,7 @@ var ItemsGrid = require('./ItemsGrid');
 var ContentGrid = React.createClass({
   getInitialState: function() {
     return {
-      filter: "LatestPosts"
+      filter: "PopularPosts"
     };
   },
   render: function() {

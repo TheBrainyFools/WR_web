@@ -17,12 +17,12 @@ function SidebarCard(props){
     <div className="mdl-card mdl-shadow--2dp" style={gridItemStyle}>
       <div className="mdl-grid">
         <div className="mdl-cell mdl-cell--5-col">
-          <img src={"https://image.tmdb.org/t/p/original"+this.props.src}  style={{width:"100%"}}/>
+          <img src={"https://image.tmdb.org/t/p/original"+props.imgSrc}  style={{width:"100%"}}/>
        </div>
       <div className="mdl-cell mdl-cell--7-col">
-        <h6>{this.props.name}</h6>
+        <h6>{props.name}</h6>
         <Star/><Star/><Star/><Star/><Star color="#ccc"/>
-        <p style={fontStyles}> {this.props.overview}</p>
+        <p className="excerpt-small" id="overview" style={fontStyles}> {props.overview}</p>
      </div>
     </div>
   </div>
