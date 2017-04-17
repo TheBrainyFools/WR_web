@@ -64,7 +64,11 @@ a.mdl-navigation__link:after{
 a:hover:after{
   width:100%;left:0
 }
-
+button{
+  background: none;
+    border: none;
+    box-shadow: none;
+}
 /*Slider*/
 .sliderItem #overview{
   overflow: hidden;

@@ -2,7 +2,6 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var ItemsGrid = require('./ItemsGrid');
 var SidebarHomePage = require('./SidebarHomePage');
-
 var axios = require('axios');
 
 var SearchResults = React.createClass({

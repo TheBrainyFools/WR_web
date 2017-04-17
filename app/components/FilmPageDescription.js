@@ -10,7 +10,7 @@ var FilmPageDescription = React.createClass({
   render: function(props) {
     return (
       <div className="description mdl-cell--6-col">
-          <h2>{this.props.title}</h2>
+          <h2>{this.props.filmInfo.title}</h2>
         <div className="mdl-grid">
         <div className="mdl-cell--6-col">
           <Star/><Star/><Star/><Star/><Star/>

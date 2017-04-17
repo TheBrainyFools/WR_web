@@ -3,6 +3,7 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var PropTypes = React.PropTypes;
 var Search = require('./Search');
+var SearchResultsByWord = require('./SearchResultsByWord');
 
 var SearchHandler = React.createClass({
   contextTypes: {
@@ -19,7 +20,6 @@ var SearchHandler = React.createClass({
     this.setState({
       searchWord: ''
     });
-
   },
   handleUpdateSearch: function (event) {
     this.setState({

@@ -15,8 +15,7 @@ var SidebarSingle = React.createClass({
       marginTop: "30px",
       marginLeft:"30px"
     }
-    for (i = 0; i < 6; i++){
-      var sidebarPosts = [i];
+      var sidebarPosts = [];
         this.context.LatestPosts.slice(0, 5).map(function(post) {
           sidebarPosts.push(<SidebarCard
             key={post.id}
@@ -25,7 +24,6 @@ var SidebarSingle = React.createClass({
             overview={post.overview}
             filmId = {post.id}/>);
         })
-      }
      return (
        <div className="mdl-cell--3-col mdl-cell--12-col-phone" style={whiteSidebar}>
        {sidebarPosts}
