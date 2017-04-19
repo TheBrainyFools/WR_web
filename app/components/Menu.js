@@ -19,9 +19,9 @@ function Menu (){
       </div>
       <div className="mdl-cell mdl-cell--4-col">
         <nav className="mdl-navigation">
-          <a className="mdl-navigation__link" href="">Home</a>
-          <a className="mdl-navigation__link" href="">Popular</a>
-          <a className="mdl-navigation__link" href="">Latest</a>
+          <Link className="mdl-navigation__link" to="/">Home</Link>
+          <Link className="mdl-navigation__link" to="/popular">Popular</Link>
+          <Link className="mdl-navigation__link" to="/latest">Latest</Link>
         </nav>
     </div>
     </div>
