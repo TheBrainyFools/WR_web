@@ -7,6 +7,7 @@ var FilmPlot = require('./FilmPlot');
 var SidebarSingle = require('./SidebarSingle');
 var axios = require('axios');
 
+
 var FilmPage = React.createClass({
 
   getInitialState: function() {
@@ -39,7 +40,7 @@ var FilmPage = React.createClass({
     };
     return (
       <div>
-        <div className="mdl-grid">
+        <div className="mdl-grid transition-item">
         <SidebarSingle/>
         <div className="mdl-cell--8-col" style={filmPageStyle}>
           <div className="mdl-grid">

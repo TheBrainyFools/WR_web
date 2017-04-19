@@ -20,8 +20,7 @@ function Menu (){
       <div className="mdl-cell mdl-cell--4-col">
         <nav className="mdl-navigation">
           <a className="mdl-navigation__link" href="">Home</a>
-          <a className="mdl-navigation__link" href="">Books</a>
-          <a className="mdl-navigation__link" href="">Films</a>
+          <a className="mdl-navigation__link" href="">Popular</a>
           <a className="mdl-navigation__link" href="">Latest</a>
         </nav>
     </div>

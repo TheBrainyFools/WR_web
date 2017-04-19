@@ -4,10 +4,14 @@ var ListItem = require('./ListItem');
 var TopViewed = require('./TopViewed');
 var TopViewedItem = require('./TopViewedItem');
 
- function SidebarHomePage(props) {
-   var SidebarHomePageStyles ={
-     padding:"5px"
-   }
+var SidebarHomePage = React.createClass({
+   contextTypes: {
+     PopularPosts: React.PropTypes.array
+   },
+   render: function() {
+     var SidebarHomePageStyles ={
+       padding:"5px"
+     }
     return (
       <div className="mdl-cell--3-col mdl-cell--12-col-phone" style={SidebarHomePageStyles}>
         <ListAvatars>
@@ -17,11 +21,15 @@ var TopViewedItem = require('./TopViewedItem');
           <ListItem name="Tina Kandelaki"/>
         </ListAvatars>
         <TopViewed>
-          <TopViewedItem name="name" author="author"/>
+          {this.context.PopularPosts.slice(0, 5).map(function(post) {
+              return (
+          <TopViewedItem name={post.title} imgSrc={post.poster_path} author="Author Author"/>
+           )
+         })}
         </TopViewed>
       </div>
 
     );
   }
-
+})
 module.exports = SidebarHomePage;
