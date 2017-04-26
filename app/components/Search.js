@@ -3,11 +3,14 @@ var PropTypes = React.PropTypes;
 var ReactRouter = require('react-router');
 var Link = require('react-router').Link;
 
-function Search(props) {
+
+var Search = React.createClass({
+
+  render: function(props) {
     return (
-      <form onSubmit={props.onSubmitSearch}>
+      <form onSubmit={this.props.onSubmitSearch}>
         <label className="mdl-button mdl-js-button mdl-button--icon">
-          <Link to={"/search/"+props.searchWord}>
+          <Link to={"/search/"+this.props.searchWord}>
             <button type="submit">
             <i className="material-icons">search</i>
             </button>
@@ -15,18 +18,18 @@ function Search(props) {
         </label>
         <div className="mdl-textfield mdl-js-textfield">
           <input className="mdl-textfield__input" type="text"
-            onChange={props.onUpdateSearch}
-            value={props.searchWord}/>
+            onChange={this.props.onUpdateSearch}
+            value={this.props.searchWord}/>
           <label className="mdl-textfield__label">Search</label>
         </div>
       </form>
     );
   }
-
-  Search.propTypes = {
-  onSubmitSearch: PropTypes.func.isRequired,
-  onUpdateSearch: PropTypes.func.isRequired,
-  searchWord: PropTypes.string.isRequired,
+});
+Search.propTypes = {
+onSubmitSearch: PropTypes.func.isRequired,
+onUpdateSearch: PropTypes.func.isRequired,
+searchWord: PropTypes.string.isRequired,
 }
 
 module.exports = Search;

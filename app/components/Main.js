@@ -3,6 +3,7 @@ var ReactDom = require('react-dom');
 var Menu = require('./Menu');
 var Footer = require('./Footer');
 require("jquery");
+require("../js/material.min.js");
 var Films = require('./Films');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
@@ -12,7 +13,6 @@ var Main = React.createClass({
     LatestPosts: React.PropTypes.array
   },
   render: function(props) {
-    require("../js/material.min.js");
     return (
       <div className="main-container">
         <ReactCSSTransitionGroup

@@ -5,6 +5,7 @@ var FilmPageImg = require('./FilmPageImg');
 var FilmPageDescription = require('./FilmPageDescription');
 var FilmPlot = require('./FilmPlot');
 var SidebarSingle = require('./SidebarSingle');
+var Comments = require('./Comments')
 var axios = require('axios');
 
 
@@ -47,6 +48,7 @@ var FilmPage = React.createClass({
           <FilmPageImg imgSrc={this.state.filmInfo.poster_path}/>
           <FilmPageDescription filmInfo={this.state.filmInfo}/>
           <FilmPlot filmPlot={this.state.filmInfo.overview}/>
+            <Comments/>
           </div>
         </div>
       </div>

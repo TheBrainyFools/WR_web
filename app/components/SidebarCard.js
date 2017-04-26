@@ -1,5 +1,5 @@
 var React = require('react');
-var Star = require('./Star');
+var Rating = require('./Rating');
 var GridItemMenu = require('./GridItemMenu');
 var GridItemImg = require('./GridItemImg');
 
@@ -21,7 +21,7 @@ function SidebarCard(props){
        </div>
       <div className="mdl-cell mdl-cell--7-col">
         <h6>{props.name}</h6>
-        <Star/><Star/><Star/><Star/><Star color="#ccc"/>
+        <Rating rating="3"/>
         <p className="excerpt-small" id="overview" style={fontStyles}> {props.overview}</p>
      </div>
     </div>

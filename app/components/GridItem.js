@@ -1,5 +1,5 @@
 var React = require('react');
-var Star = require('./Star');
+var Rating = require('./Rating');
 var GridItemMenu = require('./GridItemMenu');
 var GridItemImg = require('./GridItemImg');
 var Link = require('react-router').Link;
@@ -22,7 +22,7 @@ function GridItem(props){
       <div className="mdl-cell mdl-cell--7-col">
         <GridItemMenu/>
         <Link to={"/films/"+props.filmId}><h6> {props.name} </h6></Link>
-        <Star/><Star/><Star/><Star/><Star color="#ccc"/>
+        <Rating rating="3"/>
         <p id="overview" style={fontStyles}> {props.overview}</p>
      </div>
     </div>

@@ -5,7 +5,6 @@ var SidebarHomePage = require('./SidebarHomePage');
 var axios = require('axios');
 
 var SearchResults = React.createClass({
-
   render: function(props) {
     return (
         <div className="mdl-grid">

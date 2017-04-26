@@ -3,7 +3,9 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var PropTypes = React.PropTypes;
 var Search = require('./Search');
+var createHistory = require('history').createBrowserHistory;
 var SearchResultsByWord = require('./SearchResultsByWord');
+var history = createHistory()
 
 var SearchHandler = React.createClass({
   contextTypes: {
@@ -25,6 +27,7 @@ var SearchHandler = React.createClass({
     this.setState({
       searchWord: event.target.value
     });
+  history.push('/search/'+this.state.searchWord)
   },
   render: function() {
     return (

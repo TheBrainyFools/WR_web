@@ -64,7 +64,11 @@ a.mdl-navigation__link:after{
 a:hover:after{
   width:100%;left:0
 }
-
+button{
+  background: none;
+    border: none;
+    box-shadow: none;
+}
 /*Slider*/
 .sliderItem #overview{
   overflow: hidden;
@@ -74,4 +78,20 @@ line-height: 16px;
 max-height: 85px;
 -webkit-line-clamp: 5;
 -webkit-box-orient: vertical
+}
+
+/*Transition*/
+.appear-enter {
+  transition-duration: .7s;
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+  opacity: 0;
+}
+
+.appear-enter.appear-enter-active {
+  opacity: 1;
+}
+
+.appear-leave {
+  opacity: 0;
 }

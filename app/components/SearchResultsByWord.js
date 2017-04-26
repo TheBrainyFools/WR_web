@@ -3,6 +3,8 @@ var PropTypes = React.PropTypes;
 var SearchResults = require('./SearchResults');
 var ReactRouter = require('react-router');
 var GridItem = require('./GridItem');
+var createHistory = require('history').createBrowserHistory;
+var history = createHistory()
 
 var SearchResultsByWord = React.createClass({
   contextTypes: {
@@ -40,8 +42,8 @@ var SearchResultsByWord = React.createClass({
      this.searchByWord();
    },
    componentWillUpdate: function() {
-        this.searchByWord();
-   },
+      this.searchByWord();
+    },
   render: function(props) {
         if(this.state.searchResultsState.length > 0){
         return (
@@ -56,4 +58,5 @@ var SearchResultsByWord = React.createClass({
       }
   }
 });
+
 module.exports = SearchResultsByWord;

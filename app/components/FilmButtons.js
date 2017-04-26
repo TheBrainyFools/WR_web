@@ -3,10 +3,10 @@ var PropTypes = React.PropTypes;
 
 var FilmButtons = React.createClass({
 
-  render: function() {
+  render: function(props) {
     return (
       <div style={{marginTop:"5%"}}>
-        <button style={{display:"inline-block"}} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        <button onClick={this.props.showVideo} style={{display:"inline-block"}} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
           <i className="material-icons">play_circle_outline</i> View Trailer
         </button>
         <button style={{marginLeft:"20px", display:"inline-block"}} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

@@ -1,5 +1,5 @@
 var React = require('react');
-var Star = require('./Star');
+var Rating = require('./Rating');
 var LearnMoreButton = require('./LearnMoreButton');
 require("../js/slick.js");
 var $ = require("jquery");
@@ -8,9 +8,9 @@ var $ = require("jquery");
   var SliderItem = React.createClass({
     componentDidMount: function() {
       $('.slider').slick({
-        dots: false,
+        dots: true,
         infinite: true,
-        centerMode: false,
+        centerMode: true,
         slidesToShow: 2,
         slidesToScroll: 1
            });
@@ -20,19 +20,20 @@ var $ = require("jquery");
       imgPath: React.PropTypes.string
     },
   render: function(props) {
+      var sliderImgStyles = {
+          maxHeight: '320px',
+          width: 'auto',
+          boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.23)",
+          position: "relative",
+          bottom: "-20px",
+          left: '30px'
 
-  var sliderImgStyles = {
-      maxHeight: '320px',
-      width: 'auto',
-      boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.23)",
-      position: "relative",
-      bottom: "-20px",
-      left: '30px'
-
-  };
-  var sliderTextStyles = {
-    color: '#fff'
-  }
+        };
+        var sliderTextStyles = {
+          color: '#fff'
+        }
+        var overview = this.props.overview;
+        var excerpt = overview.slice(0,200);
     return (
         <div className="mdl-grid sliderItem">
         <div className="mdl-cell mdl-cell--6-col">
@@ -40,8 +41,8 @@ var $ = require("jquery");
         </div>
         <div style={{sliderTextStyles, borderRight:'solid 1px #fff'}} className="mdl-cell mdl-cell--6-col">
           <h5>{this.props.name} </h5>
-          <Star/><Star/><Star/><Star/><Star/>
-          <p id="overview"> {this.props.overview}</p>
+          <Rating rating='2'/>
+          <p id="overview"> {excerpt}</p>
           <LearnMoreButton linkTo={this.props.filmId}/>
         </div>
       </div>
