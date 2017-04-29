@@ -12,9 +12,35 @@ var $ = require("jquery");
         infinite: true,
         centerMode: true,
         slidesToShow: 2,
-        slidesToScroll: 1
-           });
+        slidesToScroll: 1,
+        responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true
+      }
     },
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 2,
+        arrows:false
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows:false
+      }
+    }]
+
+    })
+  },
     contextTypes: {
       LatestPosts: React.PropTypes.array,
       imgPath: React.PropTypes.string

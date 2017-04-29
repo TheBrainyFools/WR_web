@@ -32,20 +32,39 @@ var FilmPageDescription = React.createClass({
           }, 500);
       },
   render: function(props) {
+    var filmCast = [];
+    this.props.filmCast.slice(0, 5).map(function(result) {
+      filmCast.push(result.name)
+    })
+
+    var genres = [];
+    this.props.genres.map(function(genre) {
+      genres.push(genre.name);
+    })
+
+    var directorName = []
+    this.props.crew.slice(0, 1).map(function(director) {
+      directorName.push(director.name)
+    })
+
+    var producerName = []
+    this.props.crew.slice(5, 6).map(function(producer) {
+    producerName.push(producer.name)
+    })
     return (
       <div id="filmPageDescription" className="description mdl-cell--6-col">
           <h2>{this.props.filmInfo.title}</h2>
         <div className="mdl-grid">
         <div className="mdl-cell--6-col">
           <Rating rating="4"/>
-          <p><b>Genre</b>:{this.props.filmInfo.adult}</p>
+          <p><b>Genre</b>:{genres.join(", ")}</p>
           <p><b>Release Date</b>:{this.props.filmInfo.release_date} </p>
-          <p><b>Duration</b>: {this.props.filmInfo.runtime} </p>
+          <p><b>Duration</b>: {this.props.filmInfo.runtime} min</p>
         </div>
         <div className="mdl-cell--6-col">
-          <p><b>Director</b>: James Mangold </p>
-          <p><b>Producer</b>:James Mangold</p>
-          <p><b>Cast</b>:  Hugh Jackman, Patrick Stewart, Dafne Keen</p>
+          <p><b>Director</b>: {directorName}</p>
+          <p><b>Producer</b>: {producerName}</p>
+          <p><b>Cast</b>: {filmCast.join(", ")}</p>
         </div>
           <FilmButtons showVideo={this.showVideo}/>
           <Trailer hideVideo={this.hideVideo}/>

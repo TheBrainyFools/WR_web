@@ -4,10 +4,16 @@ var Link = require('react-router').Link;
 var PropTypes = React.PropTypes;
 var SearchHandler = require('./SearchHandler');
 
+var drawer = document.querySelector('#drawer');
+
+
 function Menu (){
   return(
-    <div>
+    <div className="mdl-layout">
   <header className="mdl-header whiteBg">
+    <div aria-expanded="false" role="button" tabIndex="0" className="mdl-layout__drawer-button">
+      <i className="material-icons">menu</i>
+    </div>
     <div className="mdl-layout__header-row">
       <div className='mdl-cell mdl-cell--4-col'>
         <SearchHandler/>
@@ -17,6 +23,7 @@ function Menu (){
           <span className="mdl-layout-title">When Release</span>
         </Link>
       </div>
+      <div className="mdl-layout-spacer"></div>
       <div className="mdl-cell mdl-cell--4-col">
         <nav className="mdl-navigation">
           <Link className="mdl-navigation__link" to="/">Home</Link>
@@ -26,7 +33,7 @@ function Menu (){
     </div>
     </div>
   </header>
-  <div className="mdl-layout__drawer">
+  <div id="drawer" className="mdl-layout__drawer" aria-hidden="true">
     <span className="mdl-layout-title">Title</span>
     <nav className="mdl-navigation">
       <a className="mdl-navigation__link">Link</a>

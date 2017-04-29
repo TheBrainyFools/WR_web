@@ -13,7 +13,10 @@ var FilmPage = React.createClass({
 
   getInitialState: function() {
     return {
-      filmInfo: []
+      filmInfo: [],
+      filmCast: [],
+      genres: [],
+      crew: []
     };
   },
   componentDidMount: function() {
@@ -23,7 +26,15 @@ var FilmPage = React.createClass({
       axios.get("https://api.themoviedb.org/3/movie/"+id+"?api_key=fe497b618e596d47a41279dafb0d1cbf")
         .then(function(result) {
           _this.setState({
-            filmInfo: result.data
+            filmInfo: result.data,
+            genres: result.data.genres
+          });
+        })
+      axios.get("https://api.themoviedb.org/3/movie/"+id+"/credits?api_key=fe497b618e596d47a41279dafb0d1cbf")
+        .then(function(result) {
+          _this.setState({
+            filmCast: result.data.cast,
+            crew: result.data.crew
           });
         })
   },
@@ -46,7 +57,7 @@ var FilmPage = React.createClass({
         <div className="mdl-cell--8-col" style={filmPageStyle}>
           <div className="mdl-grid">
           <FilmPageImg imgSrc={this.state.filmInfo.poster_path}/>
-          <FilmPageDescription filmInfo={this.state.filmInfo}/>
+          <FilmPageDescription filmInfo={this.state.filmInfo} filmCast={this.state.filmCast} genres={this.state.genres} crew={this.state.crew}/>
           <FilmPlot filmPlot={this.state.filmInfo.overview}/>
             <Comments/>
           </div>
