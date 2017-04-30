@@ -10,7 +10,7 @@ var Trailer = React.createClass({
             <button onClick={this.props.hideVideo} className="lightbox-close">
             </button>
             <div className="video-container">
-              <iframe id="youtube" width="960" height="540" src="https://www.youtube.com/embed/eXRsNYKc-Xk?showinfo=0" frameBorder="0" allowFullScreen></iframe>
+              <iframe id="youtube" width="960" height="540" src={"https://www.youtube.com/embed/"+this.props.src+"?showinfo=0"} frameBorder="0" allowFullScreen></iframe>
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ var FilmPageDescription = React.createClass({
           setTimeout(function(){
             videoBox.style.display = 'block';
             videoBox.style.visibility = 'visible';
-            videoBox.style.zIndex = 1;
+            videoBox.style.zIndex = 100;
           }, 500);
       },
   render: function(props) {
@@ -67,7 +67,7 @@ var FilmPageDescription = React.createClass({
           <p><b>Cast</b>: {filmCast.join(", ")}</p>
         </div>
           <FilmButtons showVideo={this.showVideo}/>
-          <Trailer hideVideo={this.hideVideo}/>
+          <Trailer src={this.props.trailerKey} hideVideo={this.hideVideo}/>
       </div>
       </div>
     );
