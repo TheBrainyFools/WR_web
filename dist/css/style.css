@@ -69,6 +69,17 @@ button{
     border: none;
     box-shadow: none;
 }
+.mdl-header{
+  overflow: hidden;
+}
+.mdl-layout__drawer-button{
+  display: none;
+}
+@media (max-width:700px) {
+  .mdl-layout__drawer-button{
+    display: block;
+  }
+}
 /*Slider*/
 .sliderItem #overview{
   overflow: hidden;
@@ -94,4 +105,108 @@ max-height: 85px;
 
 .appear-leave {
   opacity: 0;
+}
+
+/*Stars*/
+.star-rating__checkbox {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.star-rating__star {
+  display: inline-block;
+  padding: 3px;
+  vertical-align: middle;
+  line-height: 1;
+  font-size: 1.5em;
+  color: #ABABAB;
+  -webkit-transition: color .2s ease-out;
+  transition: color .2s ease-out;
+}
+.star-rating__star:hover {
+  cursor: pointer;
+}
+.star-rating__star.is-selected {
+  color: #FFD700;
+}
+.star-rating__star.is-disabled:hover {
+  cursor: default;
+}
+
+/*Video*/
+
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: fixed;
+  display: none;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.lightbox-container {
+  position: relative;
+  max-width: 700px;
+  margin: 7% auto;
+  display: block;
+  padding: 0 3%;
+  height: auto;
+  z-index: 10;
+}
+@media screen and (max-width: 768px) {
+  .lightbox-container {
+    margin-top: 10%;
+  }
+}
+@media screen and (max-width: 414px) {
+  .lightbox-container {
+    margin-top: 13%;
+  }
+}
+.lightbox-content {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+.lightbox-close {
+  text-transform: uppercase;
+  background: transparent;
+  position: absolute;
+  font-weight: 300;
+  font-size: 50px;
+  display: block;
+  border: none;
+  color: white;
+  top: -80px;
+  right: -20%;
+}
+.video-container {
+  padding-bottom: 56.25%;
+  position: relative;
+  padding-top: 30px;
+  overflow: hidden;
+  height: 0;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+/*Comments*/
+
+#hypercomments_widget{
+  width: 90%;
+  position: relative;
+  margin-top: 2em
 }

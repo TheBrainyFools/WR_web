@@ -1,4 +1,4 @@
-@charset 'UTF-8';
+
 /* Slider */
 .slick-loading .slick-list
 {
@@ -32,7 +32,7 @@
     color: transparent;
     border: none;
     outline: none;
-    background: #fff;
+    background: rgba(255,255,255,0.3);
     z-index: 99;
 }
 .slick-prev:hover,

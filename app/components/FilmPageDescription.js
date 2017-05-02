@@ -7,6 +7,10 @@ var ItemsGrid = require('./ItemsGrid');
 var Trailer = require('./Trailer');
 
 var FilmPageDescription = React.createClass({
+  initSubscribtion: function () {
+    event.preventDefault();
+    OneSignal.push(["registerForPushNotifications"]);
+  },
   hideVideo: function (){
           var videoBox = document.getElementById('video');
           var video = document.getElementById('youtube');
@@ -21,7 +25,7 @@ var FilmPageDescription = React.createClass({
           var cleaned = videoSrc.replace('&autoplay=1',''); // removing autoplay form url
           video.src = cleaned;
       },
-  showVideo:function functionName() {
+  showVideo:function () {
           var videoBox = document.getElementById('video');
             videoBox.classList.remove('fadeOut');
             videoBox.classList.add('animated', 'fadeIn');
@@ -31,6 +35,7 @@ var FilmPageDescription = React.createClass({
             videoBox.style.zIndex = 100;
           }, 500);
       },
+
   render: function(props) {
     var filmCast = [];
     this.props.filmCast.slice(0, 5).map(function(result) {
@@ -42,14 +47,14 @@ var FilmPageDescription = React.createClass({
       genres.push(genre.name);
     })
 
-    var directorName = []
+    var directorName = ''
     this.props.crew.slice(0, 1).map(function(director) {
-      directorName.push(director.name)
+      directorName = director.name
     })
 
-    var producerName = []
+    var producerName = ''
     this.props.crew.slice(5, 6).map(function(producer) {
-    producerName.push(producer.name)
+    producerName = producer.name
     })
     return (
       <div id="filmPageDescription" className="description mdl-cell--6-col">
@@ -66,7 +71,7 @@ var FilmPageDescription = React.createClass({
           <p><b>Producer</b>: {producerName}</p>
           <p><b>Cast</b>: {filmCast.join(", ")}</p>
         </div>
-          <FilmButtons showVideo={this.showVideo}/>
+          <FilmButtons showVideo={this.showVideo} initSubscribtion={this.initSubscribtion}/>
           <Trailer src={this.props.trailerKey} hideVideo={this.hideVideo}/>
       </div>
       </div>
