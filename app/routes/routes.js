@@ -8,6 +8,7 @@ var Main = require('../components/Main');
 var Home = require('../components/Home');
 var FilmPage = require('../components/FilmPage');
 var SearchResultsByWord = require('../components/SearchResultsByWord');
+var SearchResultsByAuthor = require('../components/SearchResultsByAuthor');
 var PopularFilmsPage = require('../components/PopularFilmsPage');
 var LatestFilmsPage = require('../components/LatestFilmsPage');
 
@@ -18,6 +19,7 @@ var routes = (
       <IndexRoute component={Home}/>
       <Route path="/films/:id" component={FilmPage}/>
       <Route path="/search/:searchWord" component={SearchResultsByWord}/>
+      <Route path="/search/:searchWord" component={SearchResultsByAuthor}/>
       <Route path="/popular" component={PopularFilmsPage}/>
         <Route path="/latest" component={LatestFilmsPage}/>
    </Route>
