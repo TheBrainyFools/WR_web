@@ -20,7 +20,7 @@ var FilmPage = React.createClass({
       trailerKey: ''
     };
   },
-  componentDidMount: function() {
+  componentWillMount: function() {
     var _this = this;
     var id = this.props.params.id;
      this.serverRequest =
@@ -64,7 +64,6 @@ var FilmPage = React.createClass({
       marginLeft:"auto"
     };
     return (
-      <div>
         <div className="mdl-grid transition-item">
         <SidebarSingle/>
         <div className="mdl-cell--8-col" style={filmPageStyle}>
@@ -75,7 +74,6 @@ var FilmPage = React.createClass({
             <Comments/>
           </div>
         </div>
-      </div>
       </div>
     );
   }

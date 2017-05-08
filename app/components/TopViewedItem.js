@@ -31,10 +31,10 @@ componentWillMount: function() {
     return (
       <div className="mdl-list__item" >
         <span className="mdl-list__item-primary-content">
-          <img src={'https://image.tmdb.org/t/p/original'+ this.props.imgSrc} style={imgStyles}/>
+          <img key={this.props.imgSrc} src={'https://image.tmdb.org/t/p/original'+ this.props.imgSrc} style={imgStyles}/>
           <div>
           <span>{this.props.name}</span>
-          <p style={{fontWeight:"300"}}> by {directorName}</p>
+          <p key={directorName} style={{fontWeight:"300"}}> by {directorName}</p>
           </div>
         </span>
       </div>

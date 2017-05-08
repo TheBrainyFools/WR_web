@@ -1,9 +1,9 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
-require("../js/material.min.js");
 
-const GridItemMenu = (props) => {
+var GridItemMenu = React.createClass({
 
+  render: function() {
     var GridItemMenuStyles ={
       position: "absolute",
       right: "5px",
@@ -22,8 +22,9 @@ const GridItemMenu = (props) => {
           <li className="mdl-menu__item">Disabled Action</li>
           <li className="mdl-menu__item">Yet Another Action</li>
         </ul>
+          <script src="../app/js/material.min.js" async></script>
       </div>
     );
   }
-
+})
 module.exports = GridItemMenu;

@@ -12,9 +12,12 @@
     <link rel="stylesheet" href="/app/css/slick-theme.css">
     <link rel="stylesheet" href="/app/css/animate.css">
     <link rel="manifest" href="/manifest.json">
-    <script type="text/javascript" src=/app/OneSignalSDKUpdaterWorker.js"></script>
-    <script type="text/javascript" src=/app/OneSignalSDKWorker.js"></script>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+    <link rel="preconnect" href="https://api.themoviedb.org/3/movie/popular?api_key=fe497b618e596d47a41279dafb0d1cbf&language=en-US">
+    <link rel="preconnect" href="https://api.themoviedb.org/3/movie/upcoming?api_key=fe497b618e596d47a41279dafb0d1cbf&language=en-US">
+    <script type="text/javascript" src="/app/OneSignalSDKUpdaterWorker.js"></script>
+    <script type="text/javascript" src="/app/OneSignalSDKWorker.js"></script>
+    <link rel="dns-prefetch" href="https://cdn.onesignal.com/sdks/OneSignalSDK.js">
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async defer></script>
   <script>
     var OneSignal = window.OneSignal || [];
     OneSignal.push(["init", {
@@ -27,11 +30,11 @@
   </script>
   </head>
   <body>
-      <script type="text/javascript" src="/app/js/material.min.js"></script>
     <div id="main">
     </div>
+    <script type="text/javascript" src="/app/js/material.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="./js/slick.js"></script>
+    <script type="text/javascript" src="/app/js/slick.js"></script>
   </body>
 </html>

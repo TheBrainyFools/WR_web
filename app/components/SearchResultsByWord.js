@@ -54,7 +54,11 @@ var SearchResultsByWord = React.createClass({
         )
       }
       else{
-        return(<SearchResults><h4>Nothing was found</h4></SearchResults>)
+        return(
+            <SearchResults>
+              <h4>Nothing was found</h4>
+            </SearchResults>
+          )
       }
   }
 });

@@ -4,7 +4,7 @@ var SearchResults = require('./SearchResults');
 var ReactRouter = require('react-router');
 var GridItem = require('./GridItem');
 var createHistory = require('history').createBrowserHistory;
-var history = createHistory()
+var history = createHistory();
 
 var SearchResultsByAuthor = React.createClass({
   contextTypes: {
@@ -64,7 +64,11 @@ var SearchResultsByAuthor = React.createClass({
         )
       }
       else{
-        return(<SearchResults><h4>Nothing was found</h4></SearchResults>)
+        return(
+          <SearchResults>
+            <h4>Nothing was found</h4>
+          </SearchResults>
+        )
       }
   }
 });

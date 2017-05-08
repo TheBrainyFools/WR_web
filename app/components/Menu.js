@@ -3,11 +3,10 @@ var ReactRouter = require('react-router');
 var Link = require('react-router').Link;
 var PropTypes = React.PropTypes;
 var SearchHandler = require('./SearchHandler');
-
 var drawer = document.querySelector('#drawer');
 
 
-function Menu (){
+function Menu(){
   return(
     <div className="mdl-layout">
   <header className="mdl-header whiteBg">

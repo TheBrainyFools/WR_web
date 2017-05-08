@@ -9,6 +9,9 @@ var ContentGrid = React.createClass({
       filter: "PopularPosts"
     };
   },
+  contextTypes: {
+    nextPagePopular: React.PropTypes.func
+  },
   render: function() {
     var _this = this;
     function handleFilterLatest() {

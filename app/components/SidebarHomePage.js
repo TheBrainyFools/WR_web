@@ -34,13 +34,13 @@ var SidebarHomePage = React.createClass({
       <div className="mdl-cell--3-col mdl-cell--12-col-phone" style={SidebarHomePageStyles}>
         <ListAvatars>
           {this.state.persons.slice(0, 5).map(function(person) {
-              return(<ListItem name={person.name} imgSrc={'https://image.tmdb.org/t/p/w300'+person.profile_path}/>)
+              return(<ListItem key={person.id} name={person.name} imgSrc={'https://image.tmdb.org/t/p/w300'+person.profile_path}/>)
           })}
         </ListAvatars>
         <TopViewed>
           {this.context.PopularPosts.slice(0, 5).map(function(post) {
               return (
-          <TopViewedItem name={post.title} imgSrc={post.poster_path} filmId={post.id}/>
+          <TopViewedItem key={post.id} name={post.title} imgSrc={post.poster_path} filmId={post.id}/>
            )
          })}
         </TopViewed>

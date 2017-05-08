@@ -25,7 +25,7 @@ var Films = React.createClass({
      LatestPosts: React.PropTypes.array,
      imgPath: React.PropTypes.string
    },
- componentDidMount: function() {
+ componentWillMount: function() {
    var _this = this;
     this.serverRequest =
      axios
@@ -35,7 +35,6 @@ var Films = React.createClass({
            PopularPosts: result.data.results
          });
        });
-       this.serverRequest =
         axios
           .get("https://api.themoviedb.org/3/movie/upcoming?api_key=fe497b618e596d47a41279dafb0d1cbf&language=en-US")
           .then(function(result) {
@@ -44,7 +43,6 @@ var Films = React.createClass({
             });
           })
  },
-
  componentWillUnmount: function() {
    this.serverRequest.abort();
  },

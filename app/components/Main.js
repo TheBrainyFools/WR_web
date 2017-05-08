@@ -1,10 +1,8 @@
 var React = require('react');
 var ReactDom = require('react-dom');
-var Menu = require('./Menu');
-var Footer = require('./Footer');
 require("jquery");
 require("../js/material.min.js");
-var Films = require('./Films');
+var MainContainer = require('../containers/MainContainer.js')
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var Main = React.createClass({
@@ -14,18 +12,14 @@ var Main = React.createClass({
   },
   render: function(props) {
     return (
-      <div className="main-container">
-        <ReactCSSTransitionGroup
-            transitionName="appear"
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}>
-        <Menu/>
-            <Films>
-              {this.props.children}
-            </Films>
-        <Footer/>
-        </ReactCSSTransitionGroup>
-      </div>
+      <MainContainer>
+      <ReactCSSTransitionGroup
+          transitionName="appear"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300}>
+          {React.cloneElement(this.props.children, {key: this.props.location.pathname})}
+      </ReactCSSTransitionGroup>
+    </MainContainer>
     );
   }
 });
