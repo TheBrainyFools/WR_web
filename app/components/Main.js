@@ -15,6 +15,7 @@ var Main = React.createClass({
       <MainContainer>
       <ReactCSSTransitionGroup
           transitionName="appear"
+          transitionAppear={true}
           transitionEnterTimeout={500}
           transitionLeaveTimeout={300}>
           {React.cloneElement(this.props.children, {key: this.props.location.pathname})}

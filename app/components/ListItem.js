@@ -15,7 +15,7 @@ const ListItem = (props) => {
             marginRight:'15px',
             borderRadius:100+'%'}}>
         </div>
-        <Link to={'/'+props.name}><span>{props.name}</span></Link>
+      <span>{props.name}</span>
       </span>
     </div>
   )

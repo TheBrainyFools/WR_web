@@ -4,8 +4,14 @@ var LearnMoreButton = require('./LearnMoreButton');
 require("../js/slick.js");
 var $ = require("jquery");
 
-
   var SliderItem = React.createClass({
+    getInitialState: function() {
+      return {
+        sliderItemBg: ''
+      };
+    },
+    getBgColor: function() {
+    },
     componentDidMount: function() {
       $('.slider').slick({
         dots: true,
@@ -38,7 +44,6 @@ var $ = require("jquery");
         arrows:false
       }
     }]
-
     })
   },
     contextTypes: {
@@ -48,7 +53,7 @@ var $ = require("jquery");
   render: function(props) {
       var sliderImgStyles = {
           maxHeight: '320px',
-          width: 'auto',
+          width: '200px',
           boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.23)",
           position: "relative",
           bottom: "-20px",
@@ -61,13 +66,13 @@ var $ = require("jquery");
         var overview = this.props.overview;
         var excerpt = overview.slice(0,200);
     return (
-        <div className="mdl-grid sliderItem">
+        <div id="sliderItem" className="mdl-grid sliderItem">
         <div className="mdl-cell mdl-cell--6-col">
-          <img src={this.context.imgPath+this.props.imgSrc} style={sliderImgStyles}/>
+          <img id="sliderItemImg" src={this.context.imgPath+this.props.imgSrc} style={sliderImgStyles}/>
         </div>
         <div style={{sliderTextStyles, borderRight:'solid 1px #fff'}} className="mdl-cell mdl-cell--6-col">
           <h5>{this.props.name} </h5>
-          <Rating rating='2'/>
+          <Rating rating={this.props.rating}/>
           <p id="overview"> {excerpt}</p>
           <LearnMoreButton linkTo={this.props.filmId}/>
         </div>

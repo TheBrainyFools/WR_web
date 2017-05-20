@@ -26,7 +26,8 @@ var Slider = React.createClass({
               name={post.title}
               imgSrc={post.poster_path}
               overview={post.overview}
-              filmId = {post.id}>
+              filmId = {post.id}
+              rating={post.vote_average}>
             </SliderItem>
          </div>
         )})}

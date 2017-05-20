@@ -3,8 +3,7 @@ var PropTypes = React.PropTypes;
 var SearchResults = require('./SearchResults');
 var ReactRouter = require('react-router');
 var GridItem = require('./GridItem');
-var createHistory = require('history').createBrowserHistory;
-var history = createHistory();
+var axios = require('axios');
 
 var SearchResultsByAuthor = React.createClass({
   contextTypes: {
@@ -12,14 +11,17 @@ var SearchResultsByAuthor = React.createClass({
     LatestPosts: React.PropTypes.array
   },
   searchByAuthor: function () {
-    var searchWord = this.props.params.searchWord;
+    var searchWord = this.props.params.author;
     var _this = this;
     var searchResults = [];
     var searchResultsPosts = [];
           this.context.LatestPosts.map(function(post) {
-            var overview = post.overview;
-            var postTitle = post.title;
-            if(overview.includes(searchWord) || postTitle.includes(searchWord)){
+            this.serverRequest =
+              axios.get("https://api.themoviedb.org/3/movie/"+post.id+"/credits?api_key=fe497b618e596d47a41279dafb0d1cbf")
+              .then(function(result) {
+              var filmCast = result.data.cast;
+              console.log(filmCast);
+            if(filmCast.includes(searchWord)){
               searchResultsPosts.push(<GridItem
                 key={post.id}
                 name={post.title}
@@ -28,37 +30,29 @@ var SearchResultsByAuthor = React.createClass({
                 filmId = {post.id}
                 />);
             }
+            else return(0)
+          })
             return(searchResultsPosts)
           })
           this.setState({searchResultsState:searchResultsPosts});
   },
  getInitialState: function() {
    return {
-     searchWord: this.props.params.searchWord,
-     searchResultsState: [],
-     filmCast: [],
-     crew: []
+     searchWord: this.props.params.author,
+     searchResultsState: []
    };
  },
-  componentWillMount: function() {
-    this.serverRequest =
-    axios.get("https://api.themoviedb.org/3/movie/"+id+"/credits?api_key=fe497b618e596d47a41279dafb0d1cbf")
-      .then(function(result) {
-        _this.setState({
-          filmCast: result.data.cast,
-          crew: result.data.crew
-        });
-      })
-     this.searchByWord();
+  componentDidMount: function() {
+     this.searchByAuthor();
    },
    componentWillUpdate: function() {
-      this.searchByWord();
+      this.searchByAuthor();
     },
   render: function(props) {
         if(this.state.searchResultsState.length > 0){
         return (
           <SearchResults>
-            <h4>Search results by: {this.props.params.searchWord}</h4>
+            <h4>Search results by: {this.props.params.author}</h4>
             {this.state.searchResultsState}
           </SearchResults>
         )

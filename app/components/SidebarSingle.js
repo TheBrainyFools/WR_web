@@ -22,10 +22,11 @@ var SidebarSingle = React.createClass({
             name={post.title}
             imgSrc={post.poster_path}
             overview={post.overview}
-            filmId = {post.id}/>);
+            filmId = {post.id}
+            rating={post.vote_average}/>);
         })
      return (
-       <div className="mdl-cell--3-col mdl-cell--12-col-phone" style={whiteSidebar}>
+       <div className="sidebarSingle mdl-cell--3-col mdl-cell--12-col-phone" style={whiteSidebar}>
        {sidebarPosts}
        </div>
 

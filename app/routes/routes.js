@@ -19,9 +19,8 @@ var routes = (
       <IndexRoute component={Home}/>
       <Route path="/films/:id" component={FilmPage}/>
       <Route path="/search/:searchWord" component={SearchResultsByWord}/>
-      <Route path="/search/:searchWord" component={SearchResultsByAuthor}/>
       <Route path="/popular" component={PopularFilmsPage}/>
-        <Route path="/latest" component={LatestFilmsPage}/>
+      <Route path="/latest" component={LatestFilmsPage}/>
    </Route>
   </Router>
 )

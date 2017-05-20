@@ -2,6 +2,7 @@ var React = require('react');
 var Rating = require('./Rating');
 var GridItemMenu = require('./GridItemMenu');
 var GridItemImg = require('./GridItemImg');
+var Link = require('react-router').Link;
 
 function SidebarCard(props){
   var fontStyles = {
@@ -20,8 +21,8 @@ function SidebarCard(props){
           <img src={"https://image.tmdb.org/t/p/original"+props.imgSrc}  style={{width:"100%"}}/>
        </div>
       <div className="mdl-cell mdl-cell--7-col">
-        <h6>{props.name}</h6>
-        <Rating rating="3"/>
+        <Link to={"/films/"+props.filmId}><h6>{props.name}</h6></Link>
+        <Rating rating={props.rating}/>
         <p className="excerpt-small" id="overview" style={fontStyles}> {props.overview}</p>
      </div>
     </div>

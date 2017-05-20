@@ -57,7 +57,7 @@ a.mdl-navigation__link:after{
   height:2px;
   left:50%;
   position:absolute;
-  background:rgb(63,81,181);
+  background:rgb(68,138,255);
   transition:width .3s ease 0s,left .3s ease 0s;
   width:0
 }

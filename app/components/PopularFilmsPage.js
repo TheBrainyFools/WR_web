@@ -19,7 +19,7 @@ var PopularFilmsPage = React.createClass({
                   imgSrc={post.poster_path}
                   overview={post.overview}
                   filmId = {post.id}
-                  />
+                  rating={post.vote_average}/>
               )
             })}
      </div>

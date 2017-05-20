@@ -6,7 +6,7 @@ var MainContainer = require('../containers/MainContainer.js')
 var Home = React.createClass({
   render: function() {
     return (
-      <div>
+      <div className="home">
            <Slider/>
           <ContentGrid/>
       </div>

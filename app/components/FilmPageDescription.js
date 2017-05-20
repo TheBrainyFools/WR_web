@@ -61,9 +61,9 @@ var FilmPageDescription = React.createClass({
           <h2>{this.props.filmInfo.title}</h2>
         <div className="mdl-grid">
         <div className="mdl-cell--6-col">
-          <Rating rating="4"/>
-          <p><b>Genre</b>:{genres.join(", ")}</p>
-          <p><b>Release Date</b>:{this.props.filmInfo.release_date} </p>
+          <Rating rating={this.props.filmInfo.vote_average}/>
+          <p><b>Genre</b>: {genres.join(", ")}</p>
+          <p><b>Release Date</b>: {this.props.filmInfo.release_date} </p>
           <p><b>Duration</b>: {this.props.filmInfo.runtime} min</p>
         </div>
         <div className="mdl-cell--6-col">

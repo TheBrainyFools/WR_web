@@ -20,9 +20,8 @@ function GridItem(props){
       <div className="mdl-grid">
        <GridItemImg src={props.imgSrc}/>
       <div className="mdl-cell mdl-cell--7-col">
-        <GridItemMenu/>
         <Link to={"/films/"+props.filmId}><h6> {props.name} </h6></Link>
-        <Rating rating="3"/>
+        <Rating rating={props.rating}/>
         <p id="overview" style={fontStyles}> {props.overview}</p>
      </div>
     </div>

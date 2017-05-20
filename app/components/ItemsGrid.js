@@ -19,6 +19,7 @@ var ItemsGrid = React.createClass({
          imgSrc={post.poster_path}
          overview={post.overview}
          filmId = {post.id}
+         rating={post.vote_average}
          />
        )
      })}
