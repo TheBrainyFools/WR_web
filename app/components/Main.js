@@ -1,15 +1,26 @@
 var React = require('react');
-var PropTypes = React.PropTypes;
-require("../js/material.min.js");
+var ReactDom = require('react-dom');
 require("jquery");
-require("../js/slick.js");
+require("../js/material.min.js");
+var MainContainer = require('../containers/MainContainer.js')
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
- function Main (props) {
+var Main = React.createClass({
+  contextTypes: {
+    PopularPosts: React.PropTypes.array,
+    LatestPosts: React.PropTypes.array
+  },
+  render: function(props) {
     return (
-      <div className="main-container">
-        {props.children}
-      </div>
+      <MainContainer>
+      <ReactCSSTransitionGroup
+          transitionName="appear"
+          transitionEnterTimeout="500"
+          transitionLeaveTimeout="300">
+          {this.props.children}
+      </ReactCSSTransitionGroup>
+    </MainContainer>
     );
   }
-
+});
 module.exports = Main;

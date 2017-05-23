@@ -1,37 +1,38 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = require('react-router').Link;
 var PropTypes = React.PropTypes;
+var SearchHandler = require('./SearchHandler');
+var drawer = document.querySelector('#drawer');
 
 
-function Menu (){
+function Menu(){
   return(
-    <div>
+    <div className="mdl-layout">
   <header className="mdl-header whiteBg">
+    <div aria-expanded="false" role="button" tabIndex="0" className="mdl-layout__drawer-button">
+      <i className="material-icons">menu</i>
+    </div>
     <div className="mdl-layout__header-row">
       <div className='mdl-cell mdl-cell--4-col'>
-        <form action="#">
-          <label className="mdl-button mdl-js-button mdl-button--icon">
-          <i className="material-icons">search</i>
-          </label>
-    <div className="mdl-textfield mdl-js-textfield">
-      <input className="mdl-textfield__input" type="text"/>
-      <label className="mdl-textfield__label">Search</label>
-    </div>
-  </form>
+        <SearchHandler/>
       </div>
       <div className=" text-center mdl-cell mdl-cell--4-col">
-      <span className="mdl-layout-title">When Release</span>
+        <Link to="/">
+          <span className="mdl-layout-title">When Release</span>
+        </Link>
       </div>
+      <div className="mdl-layout-spacer"></div>
       <div className="mdl-cell mdl-cell--4-col">
-      <nav className="mdl-navigation">
-        <a className="mdl-navigation__link" href="">Home</a>
-        <a className="mdl-navigation__link" href="">Books</a>
-        <a className="mdl-navigation__link" href="">Films</a>
-        <a className="mdl-navigation__link" href="">Latest</a>
-      </nav>
+        <nav className="mdl-navigation">
+          <Link className="mdl-navigation__link" to="/">Home</Link>
+          <Link className="mdl-navigation__link" to="/popular">Popular</Link>
+          <Link className="mdl-navigation__link" to="/latest">Latest</Link>
+        </nav>
     </div>
     </div>
   </header>
-  <div className="mdl-layout__drawer">
+  <div id="drawer" className="mdl-layout__drawer" aria-hidden="true">
     <span className="mdl-layout-title">Title</span>
     <nav className="mdl-navigation">
       <a className="mdl-navigation__link">Link</a>

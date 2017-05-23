@@ -4,7 +4,7 @@ var PropTypes = React.PropTypes;
  function ListAvatars(props) {
     return (
       <div className="mdl-list">
-        <h4> Top producers </h4>
+        <h4> Top people </h4>
         {props.children}
       </div>
     );

@@ -1,20 +1,15 @@
 var React = require('react');
-var ReactRouter = require('react-router');
-var Menu = require('./Menu');
-var Main = require('./Main');
 var ContentGrid = require('./ContentGrid');
 var Slider = require('./Slider');
+var MainContainer = require('../containers/MainContainer.js')
 
 var Home = React.createClass({
   render: function() {
     return (
-      <Main>
-      <div>
-           <Menu/>
+      <div className="home">
            <Slider/>
           <ContentGrid/>
       </div>
-    </Main>
     );
   }
 

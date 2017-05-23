@@ -1,9 +1,10 @@
 var React = require('react');
-var Star = require('./Star');
+var Rating = require('./Rating');
 var GridItemMenu = require('./GridItemMenu');
 var GridItemImg = require('./GridItemImg');
+var Link = require('react-router').Link;
 
-const GridItem = (props) => {
+function GridItem(props){
   var fontStyles = {
     fontSize: "12px"
   };
@@ -13,16 +14,15 @@ const GridItem = (props) => {
      height: "220px",
      marginTop: "60px",
      marginRight: "2em"
-  };
+  }
   return (
     <div className="mdl-card mdl-shadow--2dp" style={gridItemStyle}>
       <div className="mdl-grid">
-       <GridItemImg/>
+       <GridItemImg src={props.imgSrc}/>
       <div className="mdl-cell mdl-cell--7-col">
-        <GridItemMenu/>
-        <h6> Logan (2017) </h6>
-        <Star/><Star/><Star/><Star/><Star color="#ccc"/>
-        <p style={fontStyles}> In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's... </p>
+        <Link to={"/films/"+props.filmId}><h6> {props.name} </h6></Link>
+        <Rating rating={props.rating}/>
+        <p id="overview" style={fontStyles}> {props.overview}</p>
      </div>
     </div>
   </div>

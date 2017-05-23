@@ -1,36 +1,84 @@
 var React = require('react');
-var Star = require('./Star');
+var Rating = require('./Rating');
+var LearnMoreButton = require('./LearnMoreButton');
+require("../js/slick.js");
+var $ = require("jquery");
 
-function SliderItem() {
-  var sliderImgStyles = {
-      maxHeight: '320px',
-      width: 'auto',
-      boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.23)",
-      position: "relative",
-      bottom: "-20px",
-      left: '30px'
+  var SliderItem = React.createClass({
+    getInitialState: function() {
+      return {
+        sliderItemBg: ''
+      };
+    },
+    getBgColor: function() {
+    },
+    componentDidMount: function() {
+      $('.slider').slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true
+      }
+    },
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 2,
+        arrows:false
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows:false
+      }
+    }]
+    })
+  },
+    contextTypes: {
+      LatestPosts: React.PropTypes.array,
+      imgPath: React.PropTypes.string
+    },
+  render: function(props) {
+      var sliderImgStyles = {
+          maxHeight: '320px',
+          width: '200px',
+          boxShadow: "0 3px 6px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.23)",
+          position: "relative",
+          bottom: "-20px",
+          left: '30px'
 
-  };
-  var sliderTextStyles = {
-    color: '#fff'
-  }
+        };
+        var sliderTextStyles = {
+          color: '#fff'
+        }
+        var overview = this.props.overview;
+        var excerpt = overview.slice(0,200);
     return (
-      <div>
-        <div className="mdl-grid" style={{borderRight:'solid 1px #fff'}}>
+        <div id="sliderItem" className="mdl-grid sliderItem">
         <div className="mdl-cell mdl-cell--6-col">
-          <img src="https://d35fkdjhhgt99.cloudfront.net/static/use-media-items/48/47382/upto-700xauto/587a5198/1.jpeg?resolution=0" style={sliderImgStyles}/>
+          <img id="sliderItemImg" src={this.context.imgPath+this.props.imgSrc} style={sliderImgStyles}/>
         </div>
-        <div style={sliderTextStyles} className="mdl-cell mdl-cell--6-col">
-          <h5> La La Land (2017) </h5>
-          <Star/><Star/><Star/><Star/><Star/>
-          <p> In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's... </p>
-          <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style={{backgroundColor:'#fff', borderRadius:'50px', padding:"0px 20px"}}>
-            Learn more
-          </button>
+        <div style={{sliderTextStyles, borderRight:'solid 1px #fff'}} className="mdl-cell mdl-cell--6-col">
+          <h5>{this.props.name} </h5>
+          <Rating rating={this.props.rating}/>
+          <p id="overview"> {excerpt}</p>
+          <LearnMoreButton linkTo={this.props.filmId}/>
         </div>
-      </div>
       </div>
     );
-  }
+}
 
+});
 module.exports = SliderItem ;

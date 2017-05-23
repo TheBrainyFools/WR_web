@@ -1,0 +1,333 @@
+
+/*General setting*/
+body{
+  background-color: #f5f4f7;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+.whiteBg{
+  background-color: white;
+}
+.whiteBg a{
+  color:#333!important;
+}
+.text-center{
+  text-align: center;
+}
+.mdl-tabs__tab-bar{
+  justify-content: flex-end;
+}
+.mdl-card{
+  overflow: visible;
+}
+.mdl-card #overview{
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 65px;      /* fallback */
+   -webkit-line-clamp: 4; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+.shadow1{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.23);
+}
+h5, h6{
+  margin: 5px 0 16px;
+}
+p{
+    margin:1em 0;
+}
+a{
+  text-decoration: none;
+}
+
+/* nav*/
+a.mdl-navigation__link{
+  position:relative
+}
+a.mdl-navigation__link:after{
+  bottom:0;
+  content:"";
+  display:block;
+  height:2px;
+  left:50%;
+  position:absolute;
+  background:rgb(68,138,255);
+  transition:width .3s ease 0s,left .3s ease 0s;
+  width:0
+}
+a:hover:after{
+  width:100%;left:0
+}
+button{
+  background: none;
+    border: none;
+    box-shadow: none;
+}
+.mdl-header{
+  overflow: hidden;
+}
+.mdl-layout__drawer-button{
+  display: none;
+}
+@media (max-width:700px) {
+  .mdl-layout__drawer-button{
+    display: block;
+  }
+}
+/*Slider*/
+.sliderItem #overview{
+  overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+line-height: 16px;
+max-height: 85px;
+-webkit-line-clamp: 5;
+-webkit-box-orient: vertical
+}
+.sliderItem{
+  position: relative;
+}
+/*Transition*/
+.appear-enter {
+  transition-duration: .7s;
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+  opacity: 0;
+}
+
+.appear-enter.appear-enter-active {
+  opacity: 1;
+}
+
+.appear-leave {
+  opacity: 0;
+}
+/*Stars*/
+.star-rating__checkbox {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.star-rating__star {
+  display: inline-block;
+  padding: 3px;
+  vertical-align: middle;
+  line-height: 1;
+  font-size: 1.5em;
+  color: #ABABAB;
+  -webkit-transition: color .2s ease-out;
+  transition: color .2s ease-out;
+}
+.star-rating__star:hover {
+  cursor: pointer;
+}
+.star-rating__star.is-selected {
+  color: #FFD700;
+}
+.star-rating__star.is-disabled:hover {
+  cursor: default;
+}
+
+/*Video*/
+
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  position: fixed;
+  display: none;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+.lightbox-container {
+  position: relative;
+  max-width: 700px;
+  margin: 7% auto;
+  display: block;
+  padding: 0 3%;
+  height: auto;
+  z-index: 10;
+}
+@media screen and (max-width: 768px) {
+  .lightbox-container {
+    margin-top: 10%;
+  }
+}
+@media screen and (max-width: 414px) {
+  .lightbox-container {
+    margin-top: 13%;
+  }
+}
+.lightbox-content {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+.lightbox-close {
+  text-transform: uppercase;
+  background: transparent;
+  position: absolute;
+  font-weight: 300;
+  font-size: 50px;
+  display: block;
+  border: none;
+  color: white;
+  top: -80px;
+  right: -20%;
+}
+.video-container {
+  padding-bottom: 56.25%;
+  position: relative;
+  padding-top: 30px;
+  overflow: hidden;
+  height: 0;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+/*Comments*/
+
+#hypercomments_widget{
+  width: 90%;
+  position: relative;
+  margin-top: 2em
+}
+
+/*Scores*/
+.radial-progress {
+  margin: 0px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  bottom:10px;
+  right: 10px;
+  background-color: #d7d7d7;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 2px 10px;
+}
+.slider .radial-progress {
+  transform: scale(1);
+  left: 34.5%;
+}
+.mdl-card .radial-progress {
+  transform: scale(0.6);
+}
+.sidebarSingle .radial-progress {
+  display: none;
+}
+#filmPageDescription .radial-progress {
+  transform: scale(1.2);
+  z-index: 1;
+  top: 18%;
+  right: 5%
+}
+.home #filmPageDescription .radial-progress{
+  display: none;
+}
+@media (max-width: 480px) {
+  .radial-progress {
+    width: 85px;
+    height: 85px;
+  }
+}
+.radial-progress .circle .mask, .radial-progress .circle .fill, .radial-progress .circle .shadow {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  border-radius: 50%;
+}
+@media (max-width: 480px) {
+  .radial-progress .circle .mask, .radial-progress .circle .fill, .radial-progress .circle .shadow {
+    width: 85px;
+    height: 85px;
+  }
+}
+.radial-progress .circle .mask, .radial-progress .circle .fill {
+  -webkit-backface-visibility: hidden;
+  transition: -webkit-transform 1s;
+  transition: -ms-transform 1s;
+  transition: transform 1s;
+}
+.radial-progress .circle .mask.reanimate, .radial-progress .circle .fill.reanimate {
+  transition: -webkit-transform 0s;
+  transition: -ms-transform 0s;
+  transition: transform 0s;
+}
+.radial-progress .circle .mask.reset, .radial-progress .circle .fill.reset {
+  -webkit-transform: rotate(0deg) !important;
+  -ms-transform: rotate(0deg) !important;
+  transform: rotate(0deg) !important;
+}
+.radial-progress .circle .mask {
+  clip: rect(0px, 60px, 60px, 30px);
+}
+@media (max-width: 480px) {
+  .radial-progress .circle .mask {
+    clip: rect(0px, 85px, 85px, 42.5px);
+  }
+}
+.radial-progress .circle .mask .fill {
+  clip: rect(0px, 30px, 60px, 0px);
+  background-color: rgb(68,138,255);
+}
+@media (max-width: 480px) {
+  .radial-progress .circle .mask .fill {
+    clip: rect(0px, 42.5px, 85px, 0px);
+  }
+}
+.radial-progress .inset {
+  width: 50px !important;
+  height: 50px !important;
+  position: absolute;
+  top: 92%;
+  left: 92%;
+  margin: -50px 0 0 -50px !important;
+  background-color: #fbfbfb;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+}
+@media (max-width: 480px) {
+  .radial-progress .inset {
+    width: 66px !important;
+    height: 66px !important;
+    margin: -33px 0 0 -33px !important;
+    line-height: 90px;
+  }
+}
+.radial-progress .little {
+  font-size: 11px;
+  color: #333;
+}
+@media (max-width: 480px) {
+  .radial-progress .little {
+    font-size: 12px;
+  }
+}
+.radial-progress .big {
+  font-size: 18px;
+}
+@media (max-width: 480px) {
+  .radial-progress .big {
+    font-size: 27px;
+  }
+}
